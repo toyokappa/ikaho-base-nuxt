@@ -17,7 +17,7 @@
   height: 100vh
   background-image: url('http://gooma.jp/wp-content/uploads/2019/06/IMG_0166-940x627.jpg')
   background-size: cover
-  background-potion: center center
+  background-position: center center
   .main-content
     text-align: center
     .logo

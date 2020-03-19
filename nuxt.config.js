@@ -16,7 +16,9 @@ export default {
     ]
   },
   env: {
-    googleApiKey: process.env.GOOGLE_API_KEY
+    googleApiKey: process.env.GOOGLE_API_KEY,
+    ctfSpaceId: process.env.CTF_SPACE_ID,
+    ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN
   },
   /*
   ** Customize the progress-bar color
@@ -32,7 +34,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/googleMaps.js', ssr: false }
+    { src: '~/plugins/googleMaps.js', ssr: false },
+    { src: '~/plugins/contentful.js' }
   ],
   /*
   ** Nuxt.js dev-modules

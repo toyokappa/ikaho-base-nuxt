@@ -35,34 +35,11 @@
             | Member
           ul.members
             MemberCard(
-              name="伊藤 直哉"
-              title="メインオーナー"
-              photo="https://static.camp-fire.jp/uploads/editor_uploaded_image/image/203705/DSCN0311.jpg"
-            )
-            MemberCard(
-              name="名口 正伸"
-              title="BASEマネージャー"
-              photo="https://scontent.fkix2-1.fna.fbcdn.net/v/t1.0-9/10338332_808144609276736_5156808848998067851_n.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=gJy-rU3P-JsAX9vVIIX&_nc_ht=scontent.fkix2-1.fna&oh=eec635bd43c5b2fc2906b4e56fd3ac61&oe=5E988BD1"
-            )
-            MemberCard(
-              name="長澤 一生"
-              title="Jumanji オーナー"
-              photo="https://cdn5.vectorstock.com/i/thumb-large/86/39/default-placeholder-fitness-trainer-in-a-t-shirt-vector-21188639.jpg"
-            )
-            MemberCard(
-              name="イノ ユウスケ"
-              title="旅するミュージシャン"
-              photo="https://static.camp-fire.jp/uploads/editor_uploaded_image/image/499284/E9DE7E5E-3918-41B5-AA6A-7C42D2C36274.jpeg"
-            )
-            MemberCard(
-              name="岡村 健汰"
-              title="インテリメガネ"
-              photo="https://cdn1.vectorstock.com/i/thumb-large/19/00/default-placeholder-businessman-half-length-portr-vector-21171900.jpg"
-            )
-            MemberCard(
-              name="豊川 雄太"
-              title="エンジニア & マーケター"
-              photo="https://scontent.fkix2-1.fna.fbcdn.net/v/t1.0-9/p960x960/89584148_2788596257891388_6581817672067973120_o.jpg?_nc_cat=111&_nc_sid=85a577&_nc_ohc=5Wg_Nbjo7NkAX-KH0sv&_nc_ht=scontent.fkix2-1.fna&_nc_tp=6&oh=6c1b9d8fc1c88de6d0ef8a370ca5cece&oe=5E979299"
+              v-for="member in members"
+              :key="member.sys.id"
+              :name="member.fields.name"
+              :title="member.fields.title"
+              :photo="member.fields.photo.fields.file.url"
             )
       section.corner
         Access
@@ -82,6 +59,18 @@ export default {
     About,
     MemberCard,
     Access
+  },
+  data () {
+    return {
+      members: null
+    }
+  },
+  async created () {
+    const res = await this.$ctfClient.getEntries({
+      content_type: 'member'
+    })
+    this.members = res.items
+    console.log(this.members)
   }
 }
 </script>

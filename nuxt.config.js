@@ -15,6 +15,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: {
+    googleApiKey: process.env.GOOGLE_API_KEY
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -23,11 +26,13 @@ export default {
   ** Global CSS
   */
   css: [
+    'ress'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/googleMaps.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules

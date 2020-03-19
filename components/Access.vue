@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import GoogleMapsApiLoader from 'google-maps-api-loader'
 import mapIcon from '@/assets/map_icon.svg'
 
 export default {
@@ -42,16 +41,13 @@ export default {
       map: null
     }
   },
-  async created () {
-    const google = await GoogleMapsApiLoader({
-      apiKey: 'AIzaSyAjTNoOK8zsoUkatbD2WqPzsa7db59xfOQ'
-    })
-    const latlng = new google.maps.LatLng(36.502653, 138.968719)
-    const map = new google.maps.Map(document.querySelector('#map'), {
+  mounted () {
+    const latlng = new this.$google.maps.LatLng(36.502653, 138.968719)
+    const map = new this.$google.maps.Map(document.querySelector('#map'), {
       center: latlng,
       zoom: 13
     })
-    new google.maps.Marker({
+    new this.$google.maps.Marker({
       position: latlng,
       map,
       icon: {

@@ -11,12 +11,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "google-maps-api-loader": "^1.1.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "node-sass": "^4.13.1",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
+    "ress": "^2.0.4",
     "sass-loader": "^8.0.2"
   }
 }

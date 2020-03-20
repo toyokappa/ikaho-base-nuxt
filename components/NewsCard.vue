@@ -5,7 +5,7 @@
       .title {{ title }}
       .meta
         .category {{ category }}
-        .created-at {{ createdAt }}
+        .created-at {{ parseCreatedAt }}
 </template>
 
 <script>
@@ -26,6 +26,11 @@ export default {
     eyecatch: {
       type: String,
       required: true
+    }
+  },
+  computed: {
+    parseCreatedAt () {
+      return this.$dateFormat(this.createdAt, 'yyyy.MM.dd')
     }
   }
 }

@@ -35,7 +35,8 @@ export default {
   */
   plugins: [
     { src: '~/plugins/googleMaps.js', ssr: false },
-    { src: '~/plugins/contentful.js' }
+    { src: '~/plugins/contentful.js' },
+    { src: '~/plugins/dateFormat.js' }
   ],
   /*
   ** Nuxt.js dev-modules

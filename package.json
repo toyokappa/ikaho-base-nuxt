@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "contentful": "^7.14.0",
+    "date-fns": "^2.11.0",
     "node-sass": "^4.13.1",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",

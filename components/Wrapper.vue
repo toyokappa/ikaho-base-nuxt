@@ -70,7 +70,7 @@ export default {
   async created () {
     const res = await this.$ctfClient.getEntries({
       content_type: 'member',
-      order: 'sys.createdAt'
+      order: 'fields.memberId'
     })
     this.members = res.items
     console.log(this.members)

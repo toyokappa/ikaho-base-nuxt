@@ -1,0 +1,103 @@
+<template lang="pug">
+  #contact
+    h3.label
+      | Contact
+    form.form
+      .row
+        .group
+          input#senderName.field(type="text" @change="checkFieldValue" required)
+          label.form-label(for="senderName")
+            | Name
+        .group
+          input#senderEmail.field(type="email" @change="checkFieldValue" required)
+          label.form-label(for="senderEmail")
+            | E-mail
+      .group
+        textarea#senderMessage.field(rows="1" @change="checkFieldValue" @input="changeFieldHeight" required)
+        label.form-label(for="senderMessage")
+          | Message
+      .action
+        input.submit(type="submit" value="Submit")
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      messageLineHeight: null,
+      messageBorderHeight: null
+    }
+  },
+  mounted () {
+    const messageArea = document.querySelector('#senderMessage')
+    const messageStyles = getComputedStyle(messageArea)
+    this.messageLineHeight = parseInt(messageStyles.getPropertyValue('line-height'))
+    this.messageBorderHeight = parseInt(messageStyles.getPropertyValue('border-bottom'))
+  },
+  methods: {
+    checkFieldValue (e) {
+      const target = e.target
+      target.value ? target.classList.add('not-empty') : target.classList.remove('not-empty')
+    },
+    changeFieldHeight (e) {
+      const target = e.target
+      const lines = `${target.value}\n`.match(/\n/g).length
+      target.style.height = `${(this.messageLineHeight * lines) + this.messageBorderHeight}px`
+    }
+  }
+}
+</script>
+
+<style lang="sass" scoped>
+#contact
+  max-width: 780px
+  margin: 0 auto
+  .label
+    text-align: center
+    margin-bottom: 50px
+  .form
+    .row
+      display: flex
+      margin-left: -30px
+      .group
+        margin-left: 30px
+    .group
+      position: relative
+      width: 100%
+      margin-bottom: 60px
+      textarea
+        resize: none
+      .field
+        display: block
+        font-size: 18px
+        line-height: 28px
+        width: 100%
+        border-bottom: 2px solid #1F2233
+        &:focus
+          outline: none
+        &:focus,
+        &.not-empty
+          + .form-label
+            top: -28px
+            bottom: 0px
+      .form-label
+        position: absolute
+        top: 0px
+        bottom: 11px
+        color: #B1B3BD
+        font-size: 18px
+        line-height: 28px
+        cursor: text
+        transition: 0.2s
+    .action
+      .submit
+        display: block
+        letter-spacing: 2px
+        padding: 15px 30px
+        border: 1px solid #1F2233
+        margin-left: auto
+        transition: 0.3s
+        &:hover
+          color: white
+          background-color: #1F2233
+</style>

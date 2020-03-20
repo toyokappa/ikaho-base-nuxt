@@ -27,6 +27,8 @@
             )
       section.corner
         Access
+      section.corner
+        Contact
 </template>
 
 <script>
@@ -37,6 +39,7 @@ import NewsCard from '@/components/NewsCard.vue'
 import About from '@/components/About.vue'
 import MemberCard from '@/components/MemberCard.vue'
 import Access from '@/components/Access.vue'
+import Contact from '@/components/Contact.vue'
 
 export default {
   components: {
@@ -44,7 +47,8 @@ export default {
     NewsCard,
     About,
     MemberCard,
-    Access
+    Access,
+    Contact
   },
   data () {
     return {

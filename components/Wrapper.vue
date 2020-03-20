@@ -55,7 +55,8 @@ export default {
   async created () {
     const postRes = await this.$ctfClient.getEntries({
       content_type: 'post',
-      order: '-sys.createdAt'
+      order: '-sys.createdAt',
+      limit: 4
     })
     this.posts = postRes.items
 

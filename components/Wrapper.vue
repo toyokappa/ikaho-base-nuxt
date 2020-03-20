@@ -39,13 +39,15 @@
               :key="member.sys.id"
               :name="member.fields.name"
               :title="member.fields.title"
-              :photo="member.fields.photo.fields.file.url"
+              :photo="memberPhoto(member)"
             )
       section.corner
         Access
 </template>
 
 <script>
+import noPhotoMember from '@/assets/no_photo_member.jpg'
+
 import News from '@/components/News.vue'
 import NewsCard from '@/components/NewsCard.vue'
 import About from '@/components/About.vue'
@@ -67,10 +69,16 @@ export default {
   },
   async created () {
     const res = await this.$ctfClient.getEntries({
-      content_type: 'member'
+      content_type: 'member',
+      order: 'sys.createdAt'
     })
     this.members = res.items
     console.log(this.members)
+  },
+  methods: {
+    memberPhoto (member) {
+      return member.fields.photo ? member.fields.photo.fields.file.url : noPhotoMember
+    }
   }
 }
 </script>

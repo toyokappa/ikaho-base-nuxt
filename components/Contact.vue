@@ -5,19 +5,35 @@
     form.form
       .row
         .group
-          input#senderName.field(type="text" @change="checkFieldValue" required)
+          input#senderName.field(
+            type="text"
+            required
+            v-model="contactForm.name"
+            @change="checkFieldValue"
+          )
           label.form-label(for="senderName")
             | Name
         .group
-          input#senderEmail.field(type="email" @change="checkFieldValue" required)
+          input#senderEmail.field(
+            type="email"
+            required
+            v-model="contactForm.email"
+            @change="checkFieldValue"
+          )
           label.form-label(for="senderEmail")
             | E-mail
       .group
-        textarea#senderMessage.field(rows="1" @change="checkFieldValue" @input="changeFieldHeight" required)
+        textarea#senderMessage.field(
+          rows="1"
+          required
+          v-model="contactForm.message"
+          @change="checkFieldValue"
+          @input="changeFieldHeight"
+        )
         label.form-label(for="senderMessage")
           | Message
       .action
-        input.submit(type="submit" value="Submit")
+        input.submit(type="submit" value="Submit" @click="sendMail")
 </template>
 
 <script>
@@ -25,7 +41,12 @@ export default {
   data () {
     return {
       messageLineHeight: null,
-      messageBorderHeight: null
+      messageBorderHeight: null,
+      contactForm: {
+        name: '',
+        email: '',
+        message: ''
+      }
     }
   },
   mounted () {
@@ -43,6 +64,16 @@ export default {
       const target = e.target
       const lines = `${target.value}\n`.match(/\n/g).length
       target.style.height = `${(this.messageLineHeight * lines) + this.messageBorderHeight}px`
+    },
+    async sendMail (e) {
+      e.preventDefault()
+      const mailer = this.$firebaseFunctions.httpsCallable('sendMail')
+      try {
+        await mailer(this.contactForm)
+      } catch (err) {
+        console.log(err)
+        throw err
+      }
     }
   }
 }

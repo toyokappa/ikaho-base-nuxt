@@ -4,28 +4,12 @@
       section.corner
         News
           NewsCard(
-            title="アラジンストーブ入荷のお知らせ"
-            category="Shopping"
-            createdAt="2020.03.17"
-            eyeCatch="https://aladdin-aic.com/views/uploads/2018/04/main_2-5.jpg"
-          )
-          NewsCard(
-            title="クラフトビールフェスタ開催決定！"
-            category="Event"
-            createdAt="2020.03.14"
-            eyeCatch="https://yonasato.com/ec_img/craft_img/top/toppic_01.png"
-          )
-          NewsCard(
-            title="イノちゃんのアメリカ横断ロードムービー試写会"
-            category="Movie"
-            createdAt="2020.03.10"
-            eyeCatch="https://hataraku.vivivit.com/wp-content/uploads/2017/01/SETDESIGN1-1-768x461.jpg"
-          )
-          NewsCard(
-            title="みんなで行く軽井沢ソロキャンプ"
-            category="Tour"
-            createdAt="2020.03.10"
-            eyeCatch="https://media.alpen-group.jp/cms/magazine/assets/img/uploads/2018/outdoor/190905_outdoor_image1.jpeg"
+            v-for="post in posts"
+            :key="post.sys.id"
+            :title="post.fields.title"
+            :category="post.fields.category"
+            :createdAt="post.sys.createdAt"
+            :eyecatch="post.fields.eyecatch.fields.file.url"
           )
       section.corner
         About
@@ -36,7 +20,7 @@
           ul.members
             MemberCard(
               v-for="member in members"
-              :key="member.sys.id"
+              :key="member.fields.memberId"
               :name="member.fields.name"
               :title="member.fields.title"
               :photo="memberPhoto(member)"
@@ -64,16 +48,22 @@ export default {
   },
   data () {
     return {
-      members: null
+      posts: [],
+      members: []
     }
   },
   async created () {
-    const res = await this.$ctfClient.getEntries({
+    const postRes = await this.$ctfClient.getEntries({
+      content_type: 'post',
+      order: '-sys.createdAt'
+    })
+    this.posts = postRes.items
+
+    const memberRes = await this.$ctfClient.getEntries({
       content_type: 'member',
       order: 'fields.memberId'
     })
-    this.members = res.items
-    console.log(this.members)
+    this.members = memberRes.items
   },
   methods: {
     memberPhoto (member) {

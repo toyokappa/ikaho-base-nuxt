@@ -1,6 +1,6 @@
 <template lang="pug">
   li#newsCard
-    .header(:style="`background-image: url(${eyeCatch})`")
+    .header(:style="`background-image: url(${eyecatch})`")
     .body
       .title {{ title }}
       .meta
@@ -23,9 +23,9 @@ export default {
       type: String,
       required: true
     },
-    eyeCatch: {
+    eyecatch: {
       type: String,
-      default: "http://placehold.jp/350x240.png"
+      required: true
     }
   }
 }

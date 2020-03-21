@@ -70,8 +70,10 @@ export default {
       const mailer = this.$firebaseFunctions.httpsCallable('sendMail')
       try {
         await mailer(this.contactForm)
+        this.$toast.success('お問い合わせを受け付けました。ありがとうございました。', { duration: 5000 })
         this.resetForm()
       } catch (err) {
+        this.$toast.error('お問い合わせに失敗しました。時間をおいて再度お試しください。', { duration: 5000 })
         console.log(err)
         throw err
       }

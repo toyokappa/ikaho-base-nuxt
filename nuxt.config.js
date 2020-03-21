@@ -54,6 +54,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/toast'
   ],
   /*
   ** Build configuration
@@ -63,6 +64,15 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    }
+  },
+  toast: {
+    position: 'bottom-center',
+    action: {
+      text: '閉じる',
+      onClick (_e, toastObject) {
+        toastObject.goAway(0)
+      }
     }
   }
 }

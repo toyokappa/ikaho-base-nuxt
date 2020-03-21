@@ -2,7 +2,7 @@
   #contact
     h3.label
       | Contact
-    form.form
+    form.form(@submit='sendMail')
       .row
         .group
           input#senderName.field(
@@ -33,7 +33,7 @@
         label.form-label(for="senderMessage")
           | Message
       .action
-        input.submit(type="submit" value="Submit" @click="sendMail")
+        input.submit(type="submit" value="Submit")
 </template>
 
 <script>
@@ -70,10 +70,16 @@ export default {
       const mailer = this.$firebaseFunctions.httpsCallable('sendMail')
       try {
         await mailer(this.contactForm)
+        this.resetForm()
       } catch (err) {
         console.log(err)
         throw err
       }
+    },
+    resetForm () {
+      this.contactForm = { name: '', email: '', message: '' }
+      document.querySelector('#senderMessage').style.height = `${this.messageLineHeight + this.messageBorderHeight}px`
+      document.querySelectorAll('.field').forEach(field => field.classList.remove('not-empty'))
     }
   }
 }

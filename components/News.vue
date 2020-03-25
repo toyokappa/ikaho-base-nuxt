@@ -1,5 +1,5 @@
 <template lang="pug">
-  #news
+  .news
     ul.content-list
       NewsCard(
         v-for="news in newsList"
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#news
+.news
   text-align: center
   .content-list
     display: flex

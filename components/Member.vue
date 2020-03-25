@@ -1,5 +1,5 @@
 <template lang="pug">
-  #member
+  .member
     ul.members
       MemberCard(
         v-for="member in members"
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#member
+.member
   text-align: center
   .members
     display: flex

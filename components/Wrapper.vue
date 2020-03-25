@@ -2,28 +2,28 @@
   #wrapper
     .main-content
       section
-        Label
+        Label#news
           | News
         .corner
           News
       section
-        Label
+        Label#about
           | About
         Gallery
         .corner
           About
       section
-        Label
+        Label#member
           | Member
         .corner
           Member
       section
-        Label
+        Label#access
           | Access
         .corner
           Access
       section
-        Label
+        Label#contact
           | Contact
         .corner
           Contact

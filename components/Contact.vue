@@ -1,5 +1,5 @@
 <template lang="pug">
-  #contact
+  .contact
     form.form(@submit='sendMail')
       .row
         .group
@@ -86,7 +86,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#contact
+.contact
   max-width: 780px
   margin: 0 auto
   .form

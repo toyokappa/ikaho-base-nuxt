@@ -1,5 +1,5 @@
 <template lang="pug">
-  #about
+  .about
     .logo
       img(src="@/assets/logo_black.svg")
     h2.title
@@ -23,7 +23,7 @@
 </template>
 
 <style lang="sass" scoped>
-#about
+.about
   text-align: center
   .gallery
     margin-bottom: 30px

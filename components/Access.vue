@@ -1,5 +1,5 @@
 <template lang="pug">
-  #access
+  .access
     #map
     .place
       h3.name
@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#access
+.access
   #map
     width: 100%
     height: 500px

@@ -4,17 +4,20 @@
       nav.footer-nav
         ul.nav
           li.nav-item
-            a.nav-link(href="#")
-              | ABOUT
+            a.nav-link(href="#news")
+              | News
           li.nav-item
-            a.nav-link(href="#")
-              | ACCESS
+            a.nav-link(href="#about")
+              | About
           li.nav-item
-            a.nav-link(href="#")
-              | EVENT
+            a.nav-link(href="#member")
+              | Member
           li.nav-item
-            a.nav-link(href="#")
-              | CONTACT
+            a.nav-link(href="#access")
+              | Access
+          li.nav-item
+            a.nav-link(href="#contact")
+              | Contact
       nav.sns-nav
         ul.nav
           li.nav-item

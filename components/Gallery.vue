@@ -1,5 +1,5 @@
 <template lang="pug">
-  #gallery
+  .gallery
     .photo-area
       Hooper(:settings="hooperSettings" ref="carousel")
         Slide(v-for="photo in gallery" :key="photo.sys.id")
@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#gallery
+.gallery
   margin-bottom: 50px
   .photo-area
     position: relative

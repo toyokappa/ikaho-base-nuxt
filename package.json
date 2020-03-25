@@ -15,7 +15,8 @@
     "firebase": "^7.12.0",
     "google-maps-api-loader": "^1.1.1",
     "hooper": "^0.3.4",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-scrollto": "^2.17.1"
   },
   "devDependencies": {
     "contentful": "^7.14.0",

@@ -4,19 +4,19 @@
       nav.footer-nav
         ul.nav
           li.nav-item
-            a.nav-link(href="#news")
+            a.nav-link(href="#" v-scroll-to="'#news'")
               | News
           li.nav-item
-            a.nav-link(href="#about")
+            a.nav-link(href="#" v-scroll-to="'#about'")
               | About
           li.nav-item
-            a.nav-link(href="#member")
+            a.nav-link(href="#" v-scroll-to="'#member'")
               | Member
           li.nav-item
-            a.nav-link(href="#access")
+            a.nav-link(href="#" v-scroll-to="'#access'")
               | Access
           li.nav-item
-            a.nav-link(href="#contact")
+            a.nav-link(href="#" v-scroll-to="'#contact'")
               | Contact
       nav.sns-nav
         ul.nav

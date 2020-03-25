@@ -1,7 +1,5 @@
 <template lang="pug">
   #contact
-    h3.label
-      | Contact
     form.form(@submit='sendMail')
       .row
         .group
@@ -91,10 +89,8 @@ export default {
 #contact
   max-width: 780px
   margin: 0 auto
-  .label
-    text-align: center
-    margin-bottom: 50px
   .form
+    margin-top: 50px
     .row
       display: flex
       margin-left: -30px

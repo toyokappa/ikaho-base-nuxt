@@ -2,6 +2,8 @@
   #wrapper
     .main-content
       section.corner
+        Label
+          | News
         News
           NewsCard(
             v-for="post in posts"
@@ -12,10 +14,12 @@
             :eyecatch="post.fields.eyecatch.fields.file.url"
           )
       section.corner
+        Label
+          | About
         About(:photos="gallery")
       section.corner
         #member
-          h3.label
+          Label
             | Member
           ul.members
             MemberCard(
@@ -26,14 +30,19 @@
               :photo="memberPhoto(member)"
             )
       section.corner
+        Label
+          | Access
         Access
       section.corner
+        Label
+          | Contact
         Contact
 </template>
 
 <script>
 import noPhotoMember from '@/assets/no_photo_member.jpg'
 
+import Label from '@/components/Label.vue'
 import News from '@/components/News.vue'
 import NewsCard from '@/components/NewsCard.vue'
 import About from '@/components/About.vue'
@@ -43,6 +52,7 @@ import Contact from '@/components/Contact.vue'
 
 export default {
   components: {
+    Label,
     News,
     NewsCard,
     About,
@@ -96,8 +106,6 @@ export default {
       margin-bottom: 100px
       #member
         text-align: center
-        .label
-          margin-bottom: 30px
         .members
           display: flex
           justify-content: center

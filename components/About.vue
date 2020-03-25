@@ -1,7 +1,5 @@
 <template lang="pug">
   #about
-    h3.label
-      | About
     Gallery.gallery(:photos="photos")
     .logo
       img(src="@/assets/logo_black.svg")
@@ -44,8 +42,6 @@ export default {
 <style lang="sass" scoped>
 #about
   text-align: center
-  .label
-    margin-bottom: 30px
   .gallery
     margin-bottom: 30px
   .logo

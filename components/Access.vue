@@ -1,7 +1,5 @@
 <template lang="pug">
   #access
-    h3.label
-      | Access
     #map
     .place
       h3.name
@@ -61,9 +59,6 @@ export default {
 
 <style lang="sass" scoped>
 #access
-  .label
-    text-align: center
-    margin-bottom: 30px
   #map
     width: 100%
     height: 500px

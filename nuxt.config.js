@@ -43,7 +43,7 @@ export default {
     { src: '~/plugins/googleMaps.js', ssr: false },
     { src: '~/plugins/contentful.js' },
     { src: '~/plugins/dateFormat.js' },
-    { src: '~/plugins/firebaseFunctions.js'}
+    { src: '~/plugins/firebaseFunctions.js' }
   ],
   /*
   ** Nuxt.js dev-modules

@@ -2,6 +2,7 @@
   #about
     h3.label
       | About
+    Gallery.gallery(:photos="photos")
     .logo
       img(src="@/assets/logo_black.svg")
     h2.title
@@ -24,10 +25,28 @@
         p あなたと同じ思想の仲間がここ伊香保BASEでお待ちしています。
 </template>
 
+<script>
+import Gallery from '@/components/Gallery.vue'
+
+export default {
+  components: {
+    Gallery
+  },
+  props: {
+    photos: {
+      type: Array,
+      required: true
+    }
+  }
+}
+</script>
+
 <style lang="sass" scoped>
 #about
   text-align: center
   .label
+    margin-bottom: 30px
+  .gallery
     margin-bottom: 30px
   .logo
     margin-bottom: 20px

@@ -12,7 +12,7 @@
             :eyecatch="post.fields.eyecatch.fields.file.url"
           )
       section.corner
-        About
+        About(:photos="gallery")
       section.corner
         #member
           h3.label
@@ -53,7 +53,8 @@ export default {
   data () {
     return {
       posts: [],
-      members: []
+      members: [],
+      gallery: [],
     }
   },
   async created () {
@@ -69,6 +70,12 @@ export default {
       order: 'fields.memberId'
     })
     this.members = memberRes.items
+
+    const galleryRes = await this.$ctfClient.getEntries({
+      content_type: 'gallery'
+    })
+    this.gallery = galleryRes.items[0].fields.photos
+    console.log(this.gallery)
   },
   methods: {
     memberPhoto (member) {

@@ -21,13 +21,13 @@
       nav.sns-nav
         ul.nav
           li.nav-item
-            a.nav-link(href="#")
+            a.nav-link(href="https://www.instagram.com/explore/tags/%E4%BC%8A%E9%A6%99%E4%BF%9Dbase/" target="_blank")
               img(src="@/assets/insta_icon.svg")
           li.nav-item
-            a.nav-link(href="#")
+            a.nav-link(href="https://www.facebook.com/%E4%BC%8A%E9%A6%99%E4%BF%9Dbase-112756527024469/" target="_blank")
               img(src="@/assets/facebook_icon.svg")
           li.nav-item
-            a.nav-link(href="#")
+            a.nav-link(href="https://twitter.com/search?q=%23%E4%BC%8A%E9%A6%99%E4%BF%9Dbase&src=typed_query&f=live" target="_blank")
               img(src="@/assets/twitter_icon.svg")
       .copyright
         | &copy; 2020 IKAHO BASE

@@ -1,42 +1,48 @@
 <template lang="pug">
   #wrapper
     .main-content
-      section.corner
+      section
         Label
           | News
-        News
-          NewsCard(
-            v-for="post in posts"
-            :key="post.sys.id"
-            :title="post.fields.title"
-            :category="post.fields.category"
-            :createdAt="post.sys.createdAt"
-            :eyecatch="post.fields.eyecatch.fields.file.url"
-          )
-      section.corner
+        .corner
+          News
+            NewsCard(
+              v-for="post in posts"
+              :key="post.sys.id"
+              :title="post.fields.title"
+              :category="post.fields.category"
+              :createdAt="post.sys.createdAt"
+              :eyecatch="post.fields.eyecatch.fields.file.url"
+            )
+      section
         Label
           | About
-        About(:photos="gallery")
-      section.corner
-        #member
-          Label
-            | Member
-          ul.members
-            MemberCard(
-              v-for="member in members"
-              :key="member.fields.memberId"
-              :name="member.fields.name"
-              :title="member.fields.title"
-              :photo="memberPhoto(member)"
-            )
-      section.corner
+        Gallery.gallery(:photos="gallery")
+        .corner
+          About
+      section
+        Label
+          | Member
+        .corner
+          #member
+            ul.members
+              MemberCard(
+                v-for="member in members"
+                :key="member.fields.memberId"
+                :name="member.fields.name"
+                :title="member.fields.title"
+                :photo="memberPhoto(member)"
+              )
+      section
         Label
           | Access
-        Access
-      section.corner
+        .corner
+          Access
+      section
         Label
           | Contact
-        Contact
+        .corner
+          Contact
 </template>
 
 <script>
@@ -45,6 +51,7 @@ import noPhotoMember from '@/assets/no_photo_member.jpg'
 import Label from '@/components/Label.vue'
 import News from '@/components/News.vue'
 import NewsCard from '@/components/NewsCard.vue'
+import Gallery from '@/components/Gallery.vue'
 import About from '@/components/About.vue'
 import MemberCard from '@/components/MemberCard.vue'
 import Access from '@/components/Access.vue'
@@ -55,6 +62,7 @@ export default {
     Label,
     News,
     NewsCard,
+    Gallery,
     About,
     MemberCard,
     Access,
@@ -100,10 +108,9 @@ export default {
   padding: 80px 0
   .main-content
     width: 100%
-    max-width: 1080px
-    margin: 0 auto
-    section.corner
-      margin-bottom: 100px
+    .corner
+      max-width: 1080px
+      margin: 0 auto 100px
       #member
         text-align: center
         .members

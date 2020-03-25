@@ -1,8 +1,38 @@
 <template lang="pug">
   #news
     ul.content-list
-      slot
+      NewsCard(
+        v-for="news in newsList"
+        :key="news.sys.id"
+        :title="news.fields.title"
+        :eyecatch="news.fields.eyecatch.fields.file.url"
+        :category="news.fields.category"
+        :createdAt="news.sys.createdAt"
+      )
 </template>
+
+<script>
+import NewsCard from '@/components/NewsCard.vue'
+
+export default {
+  components: {
+    NewsCard
+  },
+  data () {
+    return {
+      newsList: []
+    }
+  },
+  async mounted () {
+    const postRes = await this.$ctfClient.getEntries({
+      content_type: 'post',
+      order: '-sys.createdAt',
+      limit: 4
+    })
+    this.newsList = postRes.items
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 #news

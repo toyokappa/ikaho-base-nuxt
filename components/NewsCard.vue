@@ -1,5 +1,5 @@
 <template lang="pug">
-  li#newsCard
+  li.news-card
     .header(:style="`background-image: url(${eyecatch})`")
     .body
       .title {{ title }}
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#newsCard
+.news-card
   width: 100%
   height: 250px
   border: 1px solid #B1B3BD

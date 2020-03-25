@@ -1,5 +1,5 @@
 <template lang="pug">
-  li#memberCard
+  li.member-card
     .photo(:style="`background-image: url(${photo})`")
       .name {{ name }}
     .title {{ title }}
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#memberCard
+.member-card
   margin: 0 15px 30px
   .photo
     width: 150px

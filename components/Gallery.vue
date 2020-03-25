@@ -2,7 +2,7 @@
   #gallery
     .photo-area
       Hooper(:settings="hooperSettings" ref="carousel")
-        Slide(v-for="photo in photos" :key="photo.sys.id")
+        Slide(v-for="photo in gallery" :key="photo.sys.id")
           .photo(:style="`background-image: url(${photo.fields.file.url})`")
       .navigation
         .prev(@click="slidePrev")
@@ -11,7 +11,7 @@
           img(:src="arrowRight")
     ul.pagination
       li.page(
-        v-for="(photo, index) in photos"
+        v-for="(photo, index) in gallery"
         :key="photo.sys.id"
         :style="`background-image: url(${photo.fields.file.url})`"
         @click="slideTo(index)"
@@ -30,14 +30,9 @@ export default {
     Slide,
     Navigation
   },
-  props: {
-    photos: {
-      type: Array,
-      required: true
-    }
-  },
   data() {
     return {
+      gallery: [],
       arrowLeft,
       arrowRight,
       hooperSettings: {
@@ -50,6 +45,12 @@ export default {
         wheelControl: false
       }
     };
+  },
+  async mounted () {
+    const galleryRes = await this.$ctfClient.getEntries({
+      content_type: 'gallery'
+    })
+    this.gallery = galleryRes.items[0].fields.photos
   },
   methods: {
     slidePrev() {

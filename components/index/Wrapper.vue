@@ -31,12 +31,12 @@
 
 <script>
 import Label from '@/components/Label.vue'
-import News from '@/components/News.vue'
-import Gallery from '@/components/Gallery.vue'
-import About from '@/components/About.vue'
-import Member from '@/components/Member.vue'
-import Access from '@/components/Access.vue'
-import Contact from '@/components/Contact.vue'
+import News from '@/components/index/News.vue'
+import Gallery from '@/components/index/Gallery.vue'
+import About from '@/components/index/About.vue'
+import Member from '@/components/index/Member.vue'
+import Access from '@/components/index/Access.vue'
+import Contact from '@/components/index/Contact.vue'
 
 export default {
   components: {

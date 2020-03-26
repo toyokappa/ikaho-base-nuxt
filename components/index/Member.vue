@@ -12,7 +12,7 @@
 
 <script>
 import noPhotoMember from '@/assets/no_photo_member.jpg'
-import MemberCard from '@/components/MemberCard.vue'
+import MemberCard from '@/components/index/MemberCard.vue'
 
 export default {
   components: {

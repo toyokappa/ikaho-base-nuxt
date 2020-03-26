@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import NewsCard from '@/components/NewsCard.vue'
+import NewsCard from '@/components/index/NewsCard.vue'
 
 export default {
   components: {

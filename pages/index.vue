@@ -8,8 +8,8 @@
 
 <script>
 import GlobalHeader from '@/components/GlobalHeader.vue'
-import PageTop from '@/components/PageTop.vue'
-import Wrapper from '@/components/Wrapper.vue'
+import PageTop from '@/components/index/PageTop.vue'
+import Wrapper from '@/components/index/Wrapper.vue'
 import GlobalFooter from '@/components/GlobalFooter.vue'
 
 export default {

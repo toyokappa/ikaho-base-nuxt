@@ -6,19 +6,19 @@
           a.nav-link.logo(href="#" v-scroll-to="'#pageTop'")
             img(src="@/assets/logo_white.svg")
         li.nav-item
-          a.nav-link(href="#" v-scroll-to="'#news'")
+          n-link.nav-link(v-scroll-to="'#news'" to)
             | News
         li.nav-item
-          a.nav-link(href="#" v-scroll-to="'#about'")
+          n-link.nav-link(v-scroll-to="'#about'" to)
             | About
         li.nav-item
-          a.nav-link(href="#" v-scroll-to="'#member'")
+          n-link.nav-link(v-scroll-to="'#member'" to)
             | Member
         li.nav-item
-          a.nav-link(href="#" v-scroll-to="'#access'")
+          n-link.nav-link(v-scroll-to="'#access'" to)
             | Access
         li.nav-item
-          a.nav-link(href="#" v-scroll-to="'#contact'")
+          n-link.nav-link(v-scroll-to="'#contact'" to)
             | Contact
 </template>
 

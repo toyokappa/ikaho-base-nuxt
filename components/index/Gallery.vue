@@ -30,9 +30,14 @@ export default {
     Slide,
     Navigation
   },
+  props: {
+    gallery: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {
-      gallery: [],
       arrowLeft,
       arrowRight,
       hooperSettings: {
@@ -45,12 +50,6 @@ export default {
         wheelControl: false
       }
     };
-  },
-  async mounted () {
-    const galleryRes = await this.$ctfClient.getEntries({
-      content_type: 'gallery'
-    })
-    this.gallery = galleryRes.items[0].fields.photos
   },
   methods: {
     slidePrev() {

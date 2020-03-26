@@ -19,18 +19,11 @@ export default {
   components: {
     NewsCard
   },
-  data () {
-    return {
-      newsList: []
+  props: {
+    newsList: {
+      type: Array,
+      required: true
     }
-  },
-  async mounted () {
-    const postRes = await this.$ctfClient.getEntries({
-      content_type: 'post',
-      order: '-sys.createdAt',
-      limit: 4
-    })
-    this.newsList = postRes.items
   }
 }
 </script>

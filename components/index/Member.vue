@@ -18,17 +18,11 @@ export default {
   components: {
     MemberCard
   },
-  data () {
-    return {
-      members: []
+  props: {
+    members: {
+      type: Array,
+      required: true,
     }
-  },
-  async mounted () {
-    const memberRes = await this.$ctfClient.getEntries({
-      content_type: 'member',
-      order: 'fields.memberId'
-    })
-    this.members = memberRes.items
   },
   methods: {
     memberPhoto (member) {

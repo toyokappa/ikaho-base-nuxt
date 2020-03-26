@@ -4,6 +4,7 @@
       NewsCard(
         v-for="news in newsList"
         :key="news.sys.id"
+        :id="news.sys.id"
         :title="news.fields.title"
         :eyecatch="news.fields.eyecatch.fields.file.url"
         :category="news.fields.category"

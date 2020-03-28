@@ -6,16 +6,16 @@
       .body
         ul.side-nav
           li.nav-item
-            a.nav-link(href="#")
+            n-link.nav-link(to="/posts")
               | All
           li.nav-item
-            a.nav-link(href="#")
+            n-link.nav-link(to="/posts?category=Events")
               | Events
           li.nav-item
-            a.nav-link(href="#")
+            n-link.nav-link(to="/posts?category=Info")
               | Info
           li.nav-item
-            a.nav-link(href="#")
+            n-link.nav-link(to="/posts?category=Blog")
               | Blog
 </template>
 

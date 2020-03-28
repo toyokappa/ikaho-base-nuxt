@@ -36,13 +36,21 @@ export default {
     SideNav,
     GlobalFooter
   },
-  async asyncData ({ app, params }) {
+  async asyncData ({ app, params, query }) {
+    const MAX_POSTS = 5
+    const page = parseInt(query.page) || 1
+    const category = query.category || ''
+
     const postRes = await app.$ctfClient.getEntries({
       content_type: 'post',
       order: '-sys.createdAt',
+      skip: MAX_POSTS * (page - 1),
+      limit: MAX_POSTS,
+      'fields.category': category
     })
     return { posts: postRes.items }
-  }
+  },
+  watchQuery: ['page', 'category']
 }
 </script>
 

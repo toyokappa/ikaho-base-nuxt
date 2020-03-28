@@ -11,8 +11,10 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.9",
     "@nuxtjs/toast": "^3.3.0",
     "firebase": "^7.12.0",
+    "github-markdown-css": "^4.0.0",
     "google-maps-api-loader": "^1.1.1",
     "hooper": "^0.3.4",
     "nuxt": "^2.0.0",

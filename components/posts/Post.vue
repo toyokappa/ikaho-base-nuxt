@@ -14,7 +14,7 @@
             .created-at {{ parseCreatedAt }}
           .eyecatch
             img(:src="eyecatch")
-          .content {{ content }}
+          .content.markdown-body(v-html="$md.render(content)")
         .sub-content
           .categories
             .header

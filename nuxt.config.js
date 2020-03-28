@@ -52,7 +52,8 @@ export default {
   ** Global CSS
   */
   css: [
-    'ress'
+    'ress',
+    'github-markdown-css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -73,7 +74,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/toast'
+    '@nuxtjs/toast',
+    '@nuxtjs/markdownit'
   ],
   /*
   ** Build configuration
@@ -93,5 +95,8 @@ export default {
         toastObject.goAway(0)
       }
     }
+  },
+  markdownit: {
+    injected: true
   }
 }

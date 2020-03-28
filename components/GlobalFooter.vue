@@ -2,22 +2,8 @@
   #globalFooter
     .main-content
       nav.footer-nav
-        ul.nav
-          li.nav-item
-            n-link.nav-link(v-scroll-to="'#news'" to)
-              | News
-          li.nav-item
-            n-link.nav-link(v-scroll-to="'#about'" to)
-              | About
-          li.nav-item
-            n-link.nav-link(v-scroll-to="'#member'" to)
-              | Member
-          li.nav-item
-            n-link.nav-link(v-scroll-to="'#access'" to)
-              | Access
-          li.nav-item
-            n-link.nav-link(v-scroll-to="'#contact'" to)
-              | Contact
+        IndexFooterNav(v-if="$route.path === '/'")
+        PageFooterNav(v-else)
       nav.sns-nav
         ul.nav
           li.nav-item
@@ -32,6 +18,18 @@
       .copyright
         | &copy; 2020 IKAHO BASE
 </template>
+
+<script>
+import IndexFooterNav from '@/components/IndexFooterNav.vue'
+import PageFooterNav from '@/components/PageFooterNav.vue'
+
+export default {
+  components: {
+    IndexFooterNav,
+    PageFooterNav
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 #globalFooter

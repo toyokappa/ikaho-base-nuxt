@@ -2,6 +2,5 @@ import Vue from 'vue'
 import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueScrollTo, {
-  duration: 500,
-  offset: -100
+  duration: 500
 })

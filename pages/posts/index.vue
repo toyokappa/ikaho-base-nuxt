@@ -5,13 +5,16 @@
       ContentHeader
       .post-area
         .posts
-          Post(
+          Post.post-section(
+            v-for="post in posts"
+            :key="post.sys.id"
             :id="post.sys.id"
             :title="post.fields.title"
             :createdAt="post.sys.createdAt"
             :category="post.fields.category"
             :eyecatch="post.fields.eyecatch.fields.file.url"
             :content="post.fields.content"
+            :isIndex="true"
           )
         SideNav
     GlobalFooter
@@ -34,9 +37,11 @@ export default {
     GlobalFooter
   },
   async asyncData ({ app, params }) {
-    const postId = params.id
-    const post = await app.$ctfClient.getEntry(postId)
-    return { post }
+    const postRes = await app.$ctfClient.getEntries({
+      content_type: 'post',
+      order: '-sys.createdAt',
+    })
+    return { posts: postRes.items }
   }
 }
 </script>
@@ -51,4 +56,12 @@ export default {
     .posts
       width: 70%
       margin-right: 5%
+      .post-section
+        padding-bottom: 50px
+        border-bottom: 1px solid #B1B3BD
+        margin-bottom: 50px
+        &:last-child
+          padding-bottom: 0
+          border: 0
+          margin: 0
 </style>

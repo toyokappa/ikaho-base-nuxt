@@ -90,4 +90,12 @@ export default {
       &:hover
         color: white
         background-color: #1F2233
+@media screen and (max-width: 480px)
+  .access
+    #map
+      height: 300px
+    .place
+      padding: 0 10px
+    .google-map-button
+      margin-left: 10px
 </style>

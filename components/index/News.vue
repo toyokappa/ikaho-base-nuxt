@@ -38,8 +38,9 @@ export default {
     margin-right: -30px
 
 @media screen and (max-width: 480px)
-  .content-list
-    flex-wrap: wrap
-    margin-right: 0 !important
-    margin-left: 2%
+  .news
+    .content-list
+      flex-wrap: wrap
+      margin-right: 0
+      margin-left: 2%
 </style>

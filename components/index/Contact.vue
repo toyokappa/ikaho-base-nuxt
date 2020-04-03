@@ -135,4 +135,7 @@ export default {
         &:hover
           color: white
           background-color: #1F2233
+@media screen and (max-width: 480px)
+  .contact
+    padding: 0 10px
 </style>

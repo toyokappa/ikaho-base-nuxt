@@ -4,18 +4,17 @@
       Hooper(:settings="hooperSettings" ref="carousel")
         Slide(v-for="photo in gallery" :key="photo.sys.id")
           .photo(:style="`background-image: url(${photo.fields.file.url})`")
-      .navigation
-        .prev(@click="slidePrev")
-          img(:src="arrowLeft")
-        .next(@click="slideNext")
-          img(:src="arrowRight")
     ul.pagination
+      li.prev(@click="slidePrev")
+        img(:src="arrowLeft")
       li.page(
         v-for="(photo, index) in gallery"
         :key="photo.sys.id"
         :style="`background-image: url(${photo.fields.file.url})`"
         @click="slideTo(index)"
       )
+      li.next(@click="slideNext")
+        img(:src="arrowRight")
 </template>
 
 <script>
@@ -41,7 +40,6 @@ export default {
       arrowLeft,
       arrowRight,
       hooperSettings: {
-        itemsToShow: 2,
         centerMode: true,
         infiniteScroll: true,
         mouseDrag: false,
@@ -67,36 +65,22 @@ export default {
 
 <style lang="sass" scoped>
 .gallery
+  display: none
   margin-bottom: 50px
   .photo-area
-    position: relative
     .hooper
-      height: 500px
+      height: 280px
       .hooper-track
         .hooper-slide
           .photo
-            width: 99%
-            height: 500px
+            width: 100%
+            height: 280px
             background-size: cover
             background-position: center center
-    .navigation
-      .prev, .next
-        position: absolute
-        top: 50%
-        transform: translateY(-50%)
-        background-color: rgba(255, 255, 255, 0.3)
-        padding: 13px 13px 10px
-        border: 1px solid white
-        cursor: pointer
-        img
-          width: 15px
-      .prev
-        left: 26%
-      .next
-        right: 26.5%
   .pagination
     display: flex
     justify-content: center
+    align-items: center
     list-style: none
     margin-top: 20px
     .page
@@ -109,7 +93,17 @@ export default {
       transition: 0.3s
       &:hover
         opacity: 0.7
+    .prev, .next
+      background-color: rgba(0, 0, 0, 0.3)
+      padding: 13px 13px 10px
+      cursor: pointer
+      img
+        width: 15px
+    .prev
+      margin-right: 5px
+    .next
+      margin-left: 5
 @media screen and (max-width: 480px)
   .gallery
-    display: none !important
+    display: block !important
 </style>

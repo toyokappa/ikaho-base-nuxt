@@ -13,6 +13,7 @@
           Label#about
             | About
           Gallery(:gallery="gallery")
+          MobileGallery(:gallery="gallery")
           .corner
             About
         section
@@ -39,6 +40,7 @@ import PageTop from '@/components/index/PageTop.vue'
 import Label from '@/components/Label.vue'
 import News from '@/components/index/News.vue'
 import Gallery from '@/components/index/Gallery.vue'
+import MobileGallery from '@/components/index/MobileGallery.vue'
 import About from '@/components/index/About.vue'
 import Member from '@/components/index/Member.vue'
 import Access from '@/components/index/Access.vue'
@@ -53,6 +55,7 @@ export default {
     News,
     News,
     Gallery,
+    MobileGallery,
     About,
     Member,
     Access,
@@ -60,7 +63,6 @@ export default {
     GlobalFooter
   },
   async asyncData ({ app }) {
-
     const postRes = await app.$ctfClient.getEntries({
       content_type: 'post',
       order: '-sys.createdAt',

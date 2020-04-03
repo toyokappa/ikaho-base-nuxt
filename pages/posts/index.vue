@@ -56,7 +56,8 @@ export default {
 
 <style lang="sass">
 .container
-  width: 1080px
+  width: 100%
+  max-width: 1080px
   padding: 80px 0
   margin: 0 auto
   .post-area
@@ -72,4 +73,10 @@ export default {
           padding-bottom: 0
           border: 0
           margin: 0
+@media screen and (max-width: 480px)
+  .container
+    .post-area
+      .posts
+        width: 100% !important
+        margin-right: 0 !important
 </style>

@@ -38,4 +38,7 @@
           .nav-link
             color: inherit
             text-decoration: none
+@media screen and (max-width: 480px)
+  .side-nav
+    display: none
 </style>

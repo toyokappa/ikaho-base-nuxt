@@ -25,8 +25,6 @@
 <style lang="sass" scoped>
 .about
   text-align: center
-  .gallery
-    margin-bottom: 30px
   .logo
     margin-bottom: 20px
     img
@@ -39,4 +37,8 @@
       margin-bottom: 30px
       p
         margin-bottom: 5px
+@media screen and (max-width: 480px)
+  .content
+    text-align: left
+    padding: 0 10px
 </style>

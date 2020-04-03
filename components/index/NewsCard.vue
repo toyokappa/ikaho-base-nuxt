@@ -73,4 +73,9 @@ export default {
         .created-at
           display: inline-block
           font-size: 12px
+@media screen and (max-width: 480px)
+  .news-card
+    width: 48%
+    margin-right: 2%
+    margin-bottom: 10px
 </style>

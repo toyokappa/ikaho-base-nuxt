@@ -36,4 +36,10 @@ export default {
     list-style: none
     box-sizing: border-box
     margin-right: -30px
+
+@media screen and (max-width: 480px)
+  .content-list
+    flex-wrap: wrap
+    margin-right: 0 !important
+    margin-left: 2%
 </style>

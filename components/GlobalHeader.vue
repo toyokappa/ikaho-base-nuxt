@@ -30,4 +30,8 @@ export default {
     width: 100%
     padding: 5px 0
     margin: 0 auto
+
+@media screen and (max-width: 480px)
+  #globalHeader
+    display: none
 </style>

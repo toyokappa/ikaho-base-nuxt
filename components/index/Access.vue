@@ -50,7 +50,7 @@ export default {
       map,
       icon: {
         url: mapIcon,
-        scale: 8
+        scaledSize: new google.maps.Size(100, 91)
       }
     })
   }

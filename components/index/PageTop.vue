@@ -27,4 +27,10 @@
       color: white
     .subtitle
       color: white
+@media screen and (max-width: 480px)
+  #pageTop
+    .main-content
+      .logo
+        img
+          width: 200px
 </style>

@@ -38,7 +38,12 @@
       p
         margin-bottom: 5px
 @media screen and (max-width: 480px)
-  .content
-    text-align: left
-    padding: 0 10px
+  .about
+    .logo
+      margin-bottom: 10px
+      img
+        width: 180px
+    .content
+      text-align: left
+      padding: 0 10px
 </style>

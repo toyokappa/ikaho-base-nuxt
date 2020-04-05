@@ -3,7 +3,7 @@
     n-link.news-link(:to="`/posts/${id}`")
       .header(:style="`background-image: url(${eyecatch})`")
       .body
-        .title {{ title }}
+        .title {{ truncateTitle }}
         .meta
           .category {{ category }}
           .created-at {{ parseCreatedAt }}
@@ -36,6 +36,9 @@ export default {
   computed: {
     parseCreatedAt () {
       return this.$dateFormat(this.createdAt, 'yyyy.MM.dd')
+    },
+    truncateTitle () {
+      return this.title.length > 20 ? `${this.title.substring(0, 19)}…` : this.title
     }
   }
 };

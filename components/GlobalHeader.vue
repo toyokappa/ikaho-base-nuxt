@@ -6,7 +6,7 @@
         PageHeaderNav(v-else)
     .mb-header
       .button
-        no-ssr
+        client-only
           tasty-burger-button(
             type="spin"
             color="#B1B3BD"

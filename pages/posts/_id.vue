@@ -54,6 +54,7 @@ export default {
       margin-right: 5%
 @media screen and (max-width: 480px)
   .container
+    padding: 40px 0 80px
     .post-area
       .posts
         width: 100% !important

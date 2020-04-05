@@ -63,7 +63,8 @@ export default {
     { src: '~/plugins/contentful.js' },
     { src: '~/plugins/dateFormat.js' },
     { src: '~/plugins/firebaseFunctions.js' },
-    { src: '~/plugins/vue-scrollto.js' }
+    { src: '~/plugins/vue-scrollto.js' },
+    { src: '~/plugins/burgerButton.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules

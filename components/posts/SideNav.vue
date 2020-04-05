@@ -1,5 +1,5 @@
 <template lang="pug">
-  .side-nav
+  #sideNav
     .categories
       .header
         | Categories
@@ -20,7 +20,7 @@
 </template>
 
 <style lang="sass" scoped>
-.side-nav
+#sideNav
   width: 25%
   .categories
     border: 1px solid black
@@ -39,6 +39,8 @@
             color: inherit
             text-decoration: none
 @media screen and (max-width: 480px)
-  .side-nav
-    display: none
+  #sideNav
+    width: 100%
+    padding: 0 10px
+    margin-top: 50px
 </style>

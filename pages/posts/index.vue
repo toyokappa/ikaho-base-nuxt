@@ -75,8 +75,9 @@ export default {
           margin: 0
 @media screen and (max-width: 480px)
   .container
-    padding: 40px 0 80px
+    padding: 40px 0
     .post-area
+      display: block !important
       .posts
         width: 100% !important
         margin-right: 0 !important

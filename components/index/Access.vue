@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import mapIcon from '@/assets/map_icon.svg'
+import mapIcon from '@/assets/map_icon.png'
 
 export default {
   data () {

@@ -20,6 +20,7 @@
 <style lang="sass" scoped>
 .nav
   display: flex
+  flex-wrap: wrap
   justify-content: center
   align-items: center
   list-style: none

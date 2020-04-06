@@ -49,31 +49,36 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@media screen and (min-width: 481px)
+#globalHeader
+  .pc-header
+    display: block
+    background-color: #1F2233
+    width: 100%
+    position: fixed
+    top: 0
+    opacity: 0.8
+    z-index: 100
+    nav
+      max-width: 780px
+      width: 100%
+      padding: 5px 0
+      margin: 0 auto
+  .mb-header
+    display: none
+
+@media screen and (max-width: 1024px)
   #globalHeader
     .pc-header
-      display: block
-      background-color: #1F2233
-      width: 100%
-      position: fixed
-      top: 0
-      opacity: 0.8
-      z-index: 100
       nav
-        max-width: 780px
-        width: 100%
-        padding: 5px 0
-        margin: 0 auto
-    .mb-header
-      display: none
+        max-width: 640px
 
 @media screen and (max-width: 480px)
   #globalHeader
     .pc-header
       display: none
     .mb-header
+      display: block
       .button
-        display: block
         padding: 14.5px 10.5px
         background-color: rgba(31, 34, 51, 0.8)
         position: fixed

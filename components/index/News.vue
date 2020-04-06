@@ -38,7 +38,7 @@ export default {
     box-sizing: border-box
     margin-right: -30px
 
-@media screen and (max-width: 480px)
+@media screen and (max-width: 1024px)
   .news
     .content-list
       flex-wrap: wrap

@@ -109,7 +109,7 @@ export default {
       transition: 0.3s
       &:hover
         opacity: 0.7
-@media screen and (max-width: 480px)
+@media screen and (max-width: 1024px)
   .gallery
     display: none !important
 </style>

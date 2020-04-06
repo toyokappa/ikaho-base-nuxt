@@ -89,6 +89,14 @@ export default {
     transition: 0.3s
     &:hover
       opacity: 0.7
+@media screen and (max-width: 1024px)
+  .post
+    .title
+      padding: 0 10px
+    .meta
+      padding: 0 10px
+    .content
+      padding: 0 10px
 @media screen and (max-width: 480px)
   .post
     .title

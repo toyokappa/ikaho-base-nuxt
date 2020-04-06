@@ -38,7 +38,7 @@
           .nav-link
             color: inherit
             text-decoration: none
-@media screen and (max-width: 480px)
+@media screen and (max-width: 1024px)
   #sideNav
     width: 100%
     padding: 0 10px

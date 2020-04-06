@@ -69,12 +69,12 @@ export default {
   margin-bottom: 50px
   .photo-area
     .hooper
-      height: 280px
+      height: 500px
       .hooper-track
         .hooper-slide
           .photo
             width: 100%
-            height: 280px
+            height: 500px
             background-size: cover
             background-position: center center
   .pagination
@@ -103,7 +103,17 @@ export default {
       margin-right: 5px
     .next
       margin-left: 5
+@media screen and (max-width: 1024px)
+  .gallery
+    display: block !important
 @media screen and (max-width: 480px)
   .gallery
     display: block !important
+    .photo-area
+      .hooper
+        height: 280px
+        .hooper-track
+          .hooper-slide
+            .photo
+              height: 280px
 </style>

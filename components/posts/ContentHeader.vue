@@ -20,7 +20,7 @@ h2
       display: block
       width: 30px
       margin-right: 3px
-@media screen and (max-width: 480px)
+@media screen and (max-width: 1024px)
   h2
     margin: 0 10px
 </style>

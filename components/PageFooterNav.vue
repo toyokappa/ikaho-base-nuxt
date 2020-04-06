@@ -26,7 +26,7 @@
   list-style: none
   margin-bottom: 25px
   .nav-item
-    margin: 0 15px
+    margin: 0 15px 10px
     .nav-link
       color: #B1B3BD
       text-decoration: none

@@ -33,6 +33,7 @@ export default {
   text-align: center
   .content-list
     display: flex
+    justify-content: center
     list-style: none
     box-sizing: border-box
     margin-right: -30px

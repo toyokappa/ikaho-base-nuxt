@@ -47,6 +47,7 @@ export default {
 <style lang="sass" scoped>
 .news-card
   width: 100%
+  max-width: 250px
   height: 250px
   border: 1px solid #B1B3BD
   margin-right: 30px

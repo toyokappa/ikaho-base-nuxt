@@ -1,6 +1,6 @@
 const title = '伊香保BASE &:freedom'
 const description = 'Co-Learning（ともに学ぶ、ともに創る）をキーワードに、自由に使えるスペースを開放しています。渋川伊香保インターから車で10分。群馬県内、県外から「何かにチャレンジしたい！」人たちが集まっています。あなたも得意なこと、好きなことを活かして何かにチャレンジしませんか？あなたと同じ思想の仲間がここ伊香保BASEでお待ちしています。'
-const host = 'https://ikahobase.gunmaaa.com'
+const host = 'https://ikahobase.netlify.com'
 const image = `${host}/ogp_image.jpg`
 
 export default {

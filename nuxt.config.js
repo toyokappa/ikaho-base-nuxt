@@ -79,7 +79,8 @@ export default {
   */
   modules: [
     '@nuxtjs/toast',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/sitemap'
   ],
   /*
   ** Build configuration
@@ -102,5 +103,23 @@ export default {
   },
   markdownit: {
     injected: true
+  },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: host,
+    gzip: true,
+    async routes () {
+      const contentful = require('contentful')
+      const client = contentful.createClient({
+        space: process.env.CTF_SPACE_ID,
+        accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+      })
+      const posts = await client.getEntries({
+        content_type: 'post',
+        order: '-sys.createdAt'
+      })
+      const urls = posts.items.map(item => `/posts/${item.sys.id}`)
+      return urls
+    }
   }
 }

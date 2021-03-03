@@ -27,7 +27,7 @@
     "contentful": "^7.14.0",
     "date-fns": "^2.11.0",
     "node-sass": "^4.13.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "ress": "^2.0.4",
     "sass-loader": "^8.0.2"
